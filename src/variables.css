@@ -1,0 +1,31 @@
+:root {
+    --primary-color: #89CFF0;  /* Baby Blue */
+    --primary-light: #A7D8F0;  /* Lighter shade of Baby Blue */
+    --primary-dark: #6BA4B8;  /* Slightly darker shade of Baby Blue */
+    --secondary-color: #34a853;
+    --background-color: #f8f9fa;
+    --surface-color: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --border-color: #dadce0;
+    --error-color: #d93025;
+    --success-color: #1e8e3e;
+    --warning-color: #f9ab00;
+  
+    --spacing-xs: 4px;
+    --spacing-sm: 8px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+  
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 18px;
+    --font-size-xl: 24px;
+  
+    --border-radius: 4px;
+    --box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  
+    --sidebar-width: 250px;
+    --header-height: 60px;
+  }

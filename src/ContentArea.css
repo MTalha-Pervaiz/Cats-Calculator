@@ -1,0 +1,42 @@
+.content-area {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .content-area h1, .content-area h2, .content-area h3 {
+    color: var(--text-color);
+  }
+  
+  .content-area p, .content-area label, .content-area span {
+    color: var(--text-color);
+  }
+  
+  .content-area input, .content-area select, .content-area textarea {
+    background-color: #ffffff;
+    color: var(--text-color);
+    border: 1px solid #ddd;
+  }
+  
+  .content-area button {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+  }
+  
+  .content-area button:hover {
+    background-color: #67bdd2;
+  }
+  
+  .content-area table {
+    background-color: #ffffff;
+  }
+  
+  .content-area th {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+  }
+  
+  .content-area td {
+    color: var(--text-color);
+  }

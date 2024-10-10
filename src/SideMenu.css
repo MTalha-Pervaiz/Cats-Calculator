@@ -1,0 +1,92 @@
+@import 'variables.css';
+
+.side-menu {
+  width: var(--sidebar-width);
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--surface-color);
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  transition: transform 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu-header {
+  padding: var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.side-menu-header h2 {
+  color: var(--primary-color);
+  font-size: var(--font-size-lg);
+  margin: 0;
+}
+
+.side-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.side-menu ul li a {
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: var(--font-size-md);
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.side-menu ul li a:hover {
+  color: var(--primary-color);
+}
+
+.side-menu ul li.active {
+  background-color: var(--primary-light);
+}
+
+.side-menu ul li.active a {
+  color: var(--surface-color);
+}
+
+.logout-button {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: var(--spacing-lg);
+  right: var(--spacing-lg);
+}
+
+.menu-toggle {
+  display: none;
+  position: fixed;
+  top: var(--spacing-md);
+  left: var(--spacing-md);
+  z-index: 1001;
+  background-color: var(--primary-color);
+  color: var(--surface-color);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: var(--font-size-lg);
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .side-menu {
+    transform: translateX(-100%);
+  }
+
+  .side-menu.open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}

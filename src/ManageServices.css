@@ -1,0 +1,94 @@
+.manage-services {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.manage-services h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.manage-services form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.manage-services input,
+.manage-services textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.manage-services textarea {
+  grid-column: 1 / -1;
+  resize: vertical;
+  min-height: 100px;
+}
+
+.manage-services button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.manage-services button:hover {
+  background-color: #2980b9;
+}
+
+.manage-services table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.manage-services th,
+.manage-services td {
+  border: 1px solid var(--border-color);
+  padding: 8px;
+  text-align: left;
+}
+
+.manage-services th {
+  background-color: var(--light-gray);
+  font-weight: bold;
+}
+
+.manage-services tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+.manage-services tr:hover {
+  background-color: var(--light-gray);
+}
+
+.manage-services .delete-button {
+  background-color: #e74c3c;
+  color: var(--white);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.manage-services .delete-button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .manage-services form {
+    grid-template-columns: 1fr;
+  }
+}

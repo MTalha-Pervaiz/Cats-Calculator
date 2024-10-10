@@ -1,0 +1,86 @@
+.hotels-page {
+  padding: 20px;
+  background-color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.hotels-page h2 {
+  color: var(--primary-color);
+  margin-bottom: 20px;
+}
+
+.hotels-page form {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.hotels-page input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+}
+
+.hotels-page button {
+  padding: 10px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hotels-page button:hover {
+  background-color: #2980b9;
+}
+
+.hotels-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.hotels-page th,
+.hotels-page td {
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  text-align: left;
+}
+
+.hotels-page th {
+  background-color: var(--light-gray);
+  font-weight: bold;
+}
+
+.hotels-page tr:nth-child(even) {
+  background-color: var(--background-color);
+}
+
+.hotels-page tr:hover {
+  background-color: var(--light-gray);
+}
+
+.hotels-page .delete-button {
+  background-color: #e74c3c;
+  color: var(--white);
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.hotels-page .delete-button:hover {
+  background-color: #c0392b;
+}
+
+@media (max-width: 768px) {
+  .hotels-page form {
+    grid-template-columns: 1fr;
+  }
+}
