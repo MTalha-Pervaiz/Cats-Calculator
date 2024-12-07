@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f0f2f5;
+    background-color: #e9ecef;
   }
   
   .login-form {
@@ -17,7 +17,7 @@
   
   .login-form h2 {
     text-align: center;
-    color: #333;
+    color: #007bff;
     margin-bottom: 1.5rem;
   }
   

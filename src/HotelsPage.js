@@ -13,8 +13,12 @@ const HotelsPage = () => {
   });
 
   useEffect(() => {
-    const savedHotels = JSON.parse(localStorage.getItem('hotels')) || [];
-    setHotels(savedHotels);
+    const fetchHotels = async () => {
+      const response = await fetch('/api/hotels');
+      const data = await response.json();
+      setHotels(data);
+    };
+    fetchHotels();
   }, []);
 
   const handleInputChange = (e) => {
@@ -22,11 +26,17 @@ const HotelsPage = () => {
     setNewHotel(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedHotels = [...hotels, newHotel];
-    setHotels(updatedHotels);
-    localStorage.setItem('hotels', JSON.stringify(updatedHotels));
+    const response = await fetch('/api/hotels', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newHotel),
+    });
+    const addedHotel = await response.json();
+    setHotels(prev => [...prev, addedHotel]);
     setNewHotel({
       HotelName: '',
       City: '',
@@ -37,10 +47,13 @@ const HotelsPage = () => {
     });
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = async (index) => {
+    const hotelToDelete = hotels[index];
+    await fetch(`/api/hotels/${hotelToDelete.id}`, {
+      method: 'DELETE',
+    });
     const updatedHotels = hotels.filter((_, i) => i !== index);
     setHotels(updatedHotels);
-    localStorage.setItem('hotels', JSON.stringify(updatedHotels));
   };
 
   return (

@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './SideMenu.css';
 
 const SideMenu = () => {
-  const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -11,27 +10,18 @@ const SideMenu = () => {
     navigate('/');
   };
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <>
-      <button className="menu-toggle" onClick={toggleMenu}>
-        ☰
-      </button>
-      <div className={`side-menu ${isOpen ? 'open' : ''}`}>
-        <h2>Menu</h2>
-        <ul>
-          <li><Link to="/calculator" onClick={toggleMenu}>Calculator</Link></li>
-          <li><Link to="/saved-itinerary" onClick={toggleMenu}>Saved Itinerary</Link></li>
-          <li><Link to="/hotels" onClick={toggleMenu}>Manage Hotels</Link></li>
-          <li><Link to="/services" onClick={toggleMenu}>Manage Services</Link></li>
-          <li><Link to="/customize-document" onClick={toggleMenu}>Customize Document</Link></li>
-        </ul>
-        <button onClick={handleLogout} className="logout-button">Logout</button>
-      </div>
-    </>
+    <div className="navbar">
+      <h2>Menu</h2>
+      <ul>
+        <li><Link to="/calculator">Calculator</Link></li>
+        <li><Link to="/saved-itinerary">Saved Itinerary</Link></li>
+        <li><Link to="/hotels">Manage Hotels</Link></li>
+        <li><Link to="/services">Manage Services</Link></li>
+        <li><Link to="/customize-document">Customize Document</Link></li>
+      </ul>
+      <button onClick={handleLogout} className="logout-button">Logout</button>
+    </div>
   );
 };
 

@@ -20,12 +20,20 @@
   }
   
   .content-area button {
-    background-color: var(--primary-color);
-    color: var(--button-text);
+    background-color: #007BFF;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 5px;
   }
   
   .content-area button:hover {
-    background-color: #67bdd2;
+    background-color: #0056b3;
+    transform: translateY(-1px);
   }
   
   .content-area table {

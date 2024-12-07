@@ -24,8 +24,12 @@ const ManageServices = () => {
   });
 
   useEffect(() => {
-    const savedServices = JSON.parse(localStorage.getItem('services')) || [];
-    setServices(savedServices);
+    const fetchServices = async () => {
+      const response = await fetch('/api/services');
+      const data = await response.json();
+      setServices(data);
+    };
+    fetchServices();
   }, []);
 
   const handleInputChange = (e) => {
@@ -33,11 +37,17 @@ const ManageServices = () => {
     setNewService(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const updatedServices = [...services, newService];
-    setServices(updatedServices);
-    localStorage.setItem('services', JSON.stringify(updatedServices));
+    const response = await fetch('/api/services', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(newService),
+    });
+    const addedService = await response.json();
+    setServices(prev => [...prev, addedService]);
     setNewService({
       Services: '',
       CAR: '',
@@ -59,10 +69,13 @@ const ManageServices = () => {
     });
   };
 
-  const handleDelete = (index) => {
+  const handleDelete = async (index) => {
+    const serviceToDelete = services[index];
+    await fetch(`/api/services/${serviceToDelete.id}`, {
+      method: 'DELETE',
+    });
     const updatedServices = services.filter((_, i) => i !== index);
     setServices(updatedServices);
-    localStorage.setItem('services', JSON.stringify(updatedServices));
   };
 
   return (

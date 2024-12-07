@@ -1,13 +1,13 @@
 .calculator {
   padding: 20px;
-  background-color: var(--white);
+  background-color: #ffffff;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin: 20px;
 }
 
 .calculator h1, .calculator h2 {
-  color: var(--primary-color);
+  color: #007bff;
   margin-bottom: 20px;
 }
 
@@ -108,5 +108,38 @@
   .actions {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* Add this to your existing table styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #CED4DA;
+}
+
+th {
+  background-color: #007BFF;
+  color: white;
+}
+
+tr:hover {
+  background-color: #F0F4FF;
+}
+
+@media (max-width: 768px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
   }
 }

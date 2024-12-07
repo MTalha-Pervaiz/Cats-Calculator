@@ -10,13 +10,14 @@
 body {
   font-family: 'Roboto', sans-serif;
   line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--background-color);
+  color: #333;
+  background-color: #f4f4f4;
 }
 
 .app-container {
   display: flex;
   min-height: 100vh;
+  flex-direction: column;
 }
 
 .main-content {
