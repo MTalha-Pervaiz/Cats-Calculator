@@ -374,18 +374,18 @@ const Calculator = () => {
               <th>CAR</th>
               <th>VAN</th>
               <th>MINIBUS</th>
-              <th>MIDI BUS</th>
+              <th>MEDIUM BUS</th>
               <th>BUS</th>
-              <th>F H/T</th>
-              <th>F S/S</th>
-              <th>G H/T</th>
-              <th>G S/S</th>
-              <th>ABF</th>
-              <th>LUN</th>
-              <th>DIN</th>
+              <th>FULL Room HOTEL</th>
+              <th>Half Room HOTEL</th>
+              <th>Guide Hotel</th>
+              <th>Guide Shared Room</th>
+              <th>Breakfast</th>
+              <th>Lunch</th>
+              <th>Dinner</th>
               <th>FEES</th>
               <th>MISC</th>
-              <th>GUID</th>
+              <th>GUIDE Fee PER DAY</th>
             </tr>
           </thead>
           <tbody>
